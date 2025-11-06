@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible Interactive Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #display {
+            width: 90%;
+            height: 380px;
+            margin: 0 auto 20px;
+            border: 3px solid #555;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .preview {
+            width: 170px;
+            height: 120px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            transition: transform .3s, border .3s;
+        }
+
+        .preview:hover,
+        .preview:focus {
+            border: 2px solid #66aaff;
+            transform: scale(1.1);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body onload="addTabFocus();">
+
+    <h1>Accessible Interactive Photo Gallery</h1>
+
+    <div id="display">Hover or focus an image to preview it here.</div>
+
+    <div class="gallery">
+
+        <img class="preview"
+             src="images/ph1.webp"
+             alt="Anime girl with blue hair looking at the sky"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+        <img class="preview"
+             src="images/ph2.webp"
+             alt="Anime boy standing in the wind"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+        <img class="preview"
+             src="images/ph3.webp"
+             alt="Cherry blossom anime street scene"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+        <img class="preview"
+             src="images/ph4.jpg"
+             alt="Night city with glowing neon lights"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+        <img class="preview"
+             src="images/ph5.jpg"
+             alt="Anime girl holding an umbrella in the rain"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+        <img class="preview"
+             src="images/ph6.jpg"
+             alt="Anime sunset over ocean"
+             onmouseover="updateImage(this)" onmouseleave="resetImage()"
+             onfocus="updateImage(this)" onblur="resetImage()">
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
